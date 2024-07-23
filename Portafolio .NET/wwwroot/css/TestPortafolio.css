@@ -1,0 +1,45 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/bck2.jpg'); /* Imagen de fondo */
+        background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        background-position: center; /* Centra la imagen */
+        filter: blur(5px) brightness(0.8) contrast(1.2); /* Aplica múltiples filtros */
+        z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+    }
+
+#navbar {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para ver el desenfoque */
+    color: white; /* Cambia el color del texto del navbar */
+}
+
+    #navbar .navbar-brand, #navbar .nav-link {
+        color: white; /* Cambia el color del texto de los enlaces del navbar */
+    }
+
+        #navbar .nav-link.active {
+            font-weight: bold; /* Estilo para el enlace activo */
+        }
+
+#sobre-mi {
+    background-color: blue;
+    color: white;
+}
+
+.card {
+    --card-bg: rgba(255, 255, 255, 0.5); /* Fondo blanco con 50% de opacidad */
+    background-color: var(--card-bg);
+}
