@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ProyectoDTO>
+
+
+
+@if (Model is not null)
+{
+
+    <div id="proyectosPersonales">
+        <div class="text-center">
+            <h1>Mis trabajos recientes</h1>
+            <p>Aqui puedes ver algunos de mis trabajos</p>
+        </div>
+
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                @foreach (var proyecto in Model)
+                {
+                    <div class="col-12 col-md-4 mb-4 d-flex align-items-stretch">
+                        <div class="card text-center w-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">@proyecto.Titulo</h5>
+                                <p class="card-text flex-grow-1">@proyecto.Descripcion</p>
+                                <div class="btn-group mb-2" role="group">
+                                    @foreach (var tecnologia in proyecto.Tecnologias)
+                                    {
+                                        // Determinar la clase del botón según la tecnología
+                                        var btnClass = tecnologia switch
+                                        {
+                                            "JavaScript" => "btn-warning",
+                                            "Laravel" => "btn-danger",
+                                            "CSS" => "btn-info",
+                                            "AdminLTE" => "btn-success",
+                                            "VanillaJS" => "btn-warning",
+                                            "ASP.NET" => "btn-info",
+                                            _ => "btn-light" // Clase por defecto
+                                        };
+
+                                        <a class="btn @btnClass m-1">@tecnologia</a>
+                                    }
+                                </div>
+
+                                <a href="@proyecto.UrlProyecto" class="btn btn-primary mt-auto" target="_blank">Ver proyecto</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+}

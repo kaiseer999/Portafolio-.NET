@@ -4,6 +4,7 @@
     height: 100%;
     position: relative;
     z-index: 0;
+    font-family: 'Onest', sans-serif; /* Aplica la fuente "Onest" */
 }
 
     body::before {
@@ -17,17 +18,19 @@
         background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
         background-position: center; /* Centra la imagen */
-        filter: blur(5px) brightness(0.8) contrast(1.2); /* Aplica múltiples filtros */
+        filter: blur(5px) brightness(0.6) contrast(1.2); /* Aplica múltiples filtros */
         z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
     }
 
 #navbar {
     background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para ver el desenfoque */
     color: white; /* Cambia el color del texto del navbar */
+    font-family: 'Onest', sans-serif; /* Aplica la fuente "Onest" */
 }
 
     #navbar .navbar-brand, #navbar .nav-link {
         color: white; /* Cambia el color del texto de los enlaces del navbar */
+        font-family: 'Onest', sans-serif; /* Aplica la fuente "Onest" */
     }
 
         #navbar .nav-link.active {
@@ -35,11 +38,170 @@
         }
 
 #sobre-mi {
-    background-color: blue;
+    background-color: #00010D;
     color: white;
+    font-family: 'Onest', sans-serif; /* Aplica la fuente "Onest" */
+    
+    border-radius: 10px; /* Añade bordes redondeados */
+    max-width: auto; /* Limita el ancho máximo del contenedor */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
+
+    #sobre-mi a {
+        color: white; /* Elimina el color azul predeterminado del enlace */
+        text-decoration: none; /* Elimina el subrayado del enlace */
+    }
+
+        #sobre-mi a:hover {
+            color: #00BFFF; /* Color del texto en el estado hover */
+            text-decoration: underline; /* Subraya el texto en el estado hover */
+        }
 
 .card {
     --card-bg: rgba(255, 255, 255, 0.5); /* Fondo blanco con 50% de opacidad */
     background-color: var(--card-bg);
+    font-family: 'Onest', sans-serif; /* Aplica la fuente "Onest" */
+}
+
+#foto-cristian {
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Opcional, centra el contenido dentro del contenedor */
+}
+
+    #foto-cristian img {
+        border-radius: 50%;
+        transition: transform 0.2s ease-in-out; /* Asegura una transición suave */
+        width: 100%; /* Asegura que la imagen sea responsive */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+        #foto-cristian img:hover {
+            transform: scale(1.05); /* Escala la imagen en hover */
+        }
+
+
+/* Estilos para los botones dentro del contenedor #redes-sociales */
+#redes-sociales .btn-outline-light {
+    border: none; /* Quita el borde */
+    background-color: transparent; /* Hace el fondo transparente */
+    color: #ffffff; /* Ajusta el color del texto si es necesario */
+    border-radius: 50px; /* Ajusta el radio del borde para hacer los botones más redondos */
+    padding: 10px 20px; /* Ajusta el relleno si es necesario */
+    transition: transform 0.2s ease-in-out; /* Suaviza la transición de escala */
+    font-family: 'Onest', sans-serif; /* Aplica la fuente "Onest" */
+}
+
+    /* Efecto hover para los botones dentro del contenedor #redes-sociales */
+    #redes-sociales .btn-outline-light:hover {
+        transform: scale(1.25); /* Aplica el efecto de escala al pasar el ratón */
+        color: white; /* Cambia el color del texto al pasar el ratón si es necesario */
+        background-color: rgba(255, 255, 255, 0.01); /* Cambia el fondo ligeramente al pasar el ratón */
+    }
+
+#experiencia-laboral {
+    background-color: #010D00; /* Color de fondo claro */
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: -20px; /* Ajuste del margen superior */
+    width: 90%; /* Ancho del contenedor en porcentaje */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+    color: white;
+}
+
+.timeline-with-icons {
+  position: relative;
+  list-style: none;
+  padding-left: 60px; /* Espacio suficiente para los iconos */
+  margin: 0; /* Elimina márgenes adicionales */
+  color:white
+}
+
+.timeline-with-icons .timeline-item {
+  position: relative;
+  margin-bottom: 40px; /* Espacio entre los elementos de la línea de tiempo */
+  color:white;
+}
+
+.timeline-with-icons .timeline-icon {
+  position: absolute;
+  left: -60px; /* Ajusta la posición de los iconos */
+  background-color: hsl(217, 88.2%, 90%);
+  border-radius: 50%;
+  height: 40px; /* Tamaño del ícono */
+  width: 40px; /* Tamaño del ícono */
+  display: flex;
+  color:#010D00;
+  align-items: center;
+  justify-content: center;
+  border: 2px;  /* Borde opcional alrededor del icono */
+  top: 50%; /* Centra verticalmente el ícono */
+  transform: translateY(-50%); /* Ajusta la posición vertical del ícono */
+}
+
+@media (max-width: 768px) {
+  #experiencia-laboral {
+    padding: 15px; /* Reduce el padding en pantallas más pequeñas */
+  }
+
+  .timeline-with-icons {
+    padding-left: 40px; /* Reduce el espacio para los iconos en pantallas más pequeñas */
+  }
+
+  .timeline-with-icons .timeline-icon {
+    left: -45px; /* Ajusta la posición de los iconos en pantallas más pequeñas */
+    height: 30px;
+    width: 30px;
+  }
+}
+#proyectosPersonales {
+    color: white;
+    background-color: #00010D;
+    border-radius: 10px;
+    padding: 10px; /* Espaciado uniforme */
+    position: relative; /* o absolute/fixed dependiendo de tu necesidad */
+    z-index: 10; /* Valor mayor para asegurarse que esté encima */
+    margin-top: -50px; /* Ajusta el margen superior para colocarlo encima */
+}
+
+    #proyectosPersonales a {
+        color: white; /* Elimina el color azul predeterminado del enlace */
+        text-decoration: none; /* Elimina el subrayado del enlace */
+    }
+
+        #proyectosPersonales a:hover {
+            color: white; /* Color del texto en el estado hover */
+            text-decoration: underline; /* Subraya el texto en el estado hover */
+        }
+
+    #proyectosPersonales .card {
+        background-color: rgba(255, 255, 255, 0); /* Fondo blanco con 80% de opacidad */
+        border: none /* Borde sutil */
+    }
+
+    #proyectosPersonales .btn-group a {
+        background-color: rgba(0, 0, 0, 0.1); /* Fondo de botones con 10% de opacidad */
+        color: white; /* Color del texto de los botones con opacidad */
+    }
+
+        #proyectosPersonales .btn-group a:hover {
+            background-color: rgba(0, 0, 0, 0.2); /* Fondo de botones en hover con 20% de opacidad */
+        }
+
+
+#form-contacto {
+    color: white;
+    background-color: #010D00;
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+    margin-top: -30px;
+    width: 90%; /* Ancho del contenedor en porcentaje */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+    padding: 20px; /* Espacio interno */
 }
